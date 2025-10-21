@@ -8,3 +8,15 @@
 - 13.15 - 14.45 - praca
 - 14.45 - 15.00 - kawa
 - 15.00 - 17.00 - praca
+
+## praca z jupyter notebook
+
+### instalacja:
+
+    pip install jupyter
+
+### uruchomienie:
+
+W katalogu w ktorym chcemy 
+
+    jupyter notebook
