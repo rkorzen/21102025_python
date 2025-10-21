@@ -20,3 +20,16 @@
 W katalogu w ktorym chcemy 
 
     jupyter notebook
+
+
+### Git
+
+git status
+
+git add <konkretna sciezka>
+
+git add .
+
+git commit -m "informacja o commicie"
+
+git pull origin main
