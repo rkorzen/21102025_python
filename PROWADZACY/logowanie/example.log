@@ -1,0 +1,78 @@
+CRITICAL:root:Critical message
+ERROR:root:error message
+WARNING:root:warning message
+INFO:root:info message
+DEBUG:root:debug message
+CRITICAL:root:Critical message
+ERROR:root:error message
+WARNING:root:warning message
+INFO:root:info message
+DEBUG:root:debug message
+CRITICAL:root:Critical message
+ERROR:root:error message
+WARNING:root:warning message
+INFO:root:info message
+DEBUG:root:debug message
+2025-10-22 13:28:31,528 CRITICAL root | <module> | Critical message
+2025-10-22 13:28:31,528 ERROR root | <module> | error message
+2025-10-22 13:28:31,528 WARNING root | <module> | warning message
+2025-10-22 13:28:31,528 INFO root | <module> | info message
+2025-10-22 13:28:31,528 DEBUG root | <module> | debug message
+2025-10-22 13:28:59,812 CRITICAL root | <module> | Critical message
+2025-10-22 13:28:59,812 ERROR root | <module> | error message
+2025-10-22 13:28:59,812 WARNING root | <module> | warning message
+2025-10-22 13:28:59,812 INFO root | <module> | info message
+2025-10-22 13:28:59,812 DEBUG root | <module> | debug message
+2025-10-22 13:29:27,320 CRITICAL xxxx | <module> | Critical message
+2025-10-22 13:29:27,320 ERROR xxxx | <module> | error message
+2025-10-22 13:29:27,320 WARNING xxxx | <module> | warning message
+2025-10-22 13:29:27,321 INFO xxxx | <module> | info message
+2025-10-22 13:29:27,321 DEBUG xxxx | <module> | debug message
+2025-10-22 13:38:36,997 INFO __main__ | opakowanie | policz_sume wykonana w 0.0000 ms
+2025-10-22 13:39:26,588 INFO __main__ | opakowanie | policz_sume wykonana w 0.0022 ms
+2025-10-22 13:42:12,535 INFO __main__ | opakowanie | policz_sume wykonana w 0.0024 s
+2025-10-22 13:42:12,535 ERROR __main__ | opakowanie | Błąd w policz_sume_z_bledem po 0.0061 s:
+ Nie mozna policzyc sume w punkcie 5
+2025-10-22 13:42:42,938 INFO __main__ | opakowanie | policz_sume wykonana w 0.0022 s
+2025-10-22 13:42:42,938 ERROR __main__ | opakowanie | Błąd w policz_sume_z_bledem po 0.0057 s:
+ Nie mozna policzyc sume w punkcie 5
+2025-10-22 13:43:18,478 INFO __main__ | opakowanie | policz_sume wykonana w 0.0023 s
+2025-10-22 13:43:18,478 ERROR __main__ | opakowanie | Błąd w policz_sume_z_bledem po 0.0058 s:
+ Nie mozna policzyc sume w punkcie 5
+Traceback (most recent call last):
+  File "/Users/rkorzen/workspace/szkolenia/21102025_python/PROWADZACY/logowanie/przyklad.py", line 19, in opakowanie
+    wynik = funkcja(*args, **kwargs)
+  File "/Users/rkorzen/workspace/szkolenia/21102025_python/PROWADZACY/logowanie/przyklad.py", line 46, in policz_sume_z_bledem
+    raise ValueError(f"Nie mozna policzyc sume w punkcie {i}")
+ValueError: Nie mozna policzyc sume w punkcie 5
+2025-10-22 13:44:18,668 INFO __main__ | opakowanie | policz_sume wykonana w 0.0021 s
+2025-10-22 13:44:18,671 ERROR __main__ | opakowanie | Błąd w policz_sume_z_bledem po 0.0066 s:
+ Nie mozna policzyc sume w punkcie 5
+Traceback (most recent call last):
+  File "/Users/rkorzen/workspace/szkolenia/21102025_python/PROWADZACY/logowanie/przyklad.py", line 19, in opakowanie
+    wynik = funkcja(*args, **kwargs)
+  File "/Users/rkorzen/workspace/szkolenia/21102025_python/PROWADZACY/logowanie/przyklad.py", line 46, in policz_sume_z_bledem
+    raise ValueError(f"Nie mozna policzyc sume w punkcie {i}")
+ValueError: Nie mozna policzyc sume w punkcie 5
+Stack (most recent call last):
+  File "/Users/rkorzen/workspace/szkolenia/21102025_python/PROWADZACY/logowanie/przyklad.py", line 51, in <module>
+    print(policz_sume_z_bledem(10))
+  File "/Users/rkorzen/workspace/szkolenia/21102025_python/PROWADZACY/logowanie/przyklad.py", line 30, in opakowanie
+    logger.error(f"Błąd w {funkcja.__name__} po {elapsed:.4f} s:\n {e}", exc_info=True, stack_info=True)
+2025-10-22 13:44:47,431 INFO __main__ | opakowanie | policz_sume wykonana w 0.0024 s
+2025-10-22 13:44:47,434 ERROR __main__ | opakowanie | Błąd w policz_sume_z_bledem po 0.0062 s:
+ Nie mozna policzyc sume w punkcie 5
+Stack (most recent call last):
+  File "/Users/rkorzen/workspace/szkolenia/21102025_python/PROWADZACY/logowanie/przyklad.py", line 51, in <module>
+    print(policz_sume_z_bledem(10))
+  File "/Users/rkorzen/workspace/szkolenia/21102025_python/PROWADZACY/logowanie/przyklad.py", line 30, in opakowanie
+    logger.error(f"Błąd w {funkcja.__name__} po {elapsed:.4f} s:\n {e}",stack_info=True)
+2025-10-22 13:45:12,855 INFO __main__ | opakowanie | policz_sume wykonana w 0.0024 s
+2025-10-22 13:45:12,855 ERROR __main__ | opakowanie | Błąd w policz_sume_z_bledem po 0.0063 s:
+ Nie mozna policzyc sume w punkcie 5
+Traceback (most recent call last):
+  File "/Users/rkorzen/workspace/szkolenia/21102025_python/PROWADZACY/logowanie/przyklad.py", line 19, in opakowanie
+    wynik = funkcja(*args, **kwargs)
+  File "/Users/rkorzen/workspace/szkolenia/21102025_python/PROWADZACY/logowanie/przyklad.py", line 46, in policz_sume_z_bledem
+    raise ValueError(f"Nie mozna policzyc sume w punkcie {i}")
+ValueError: Nie mozna policzyc sume w punkcie 5
