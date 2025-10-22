@@ -9,17 +9,45 @@
 - 14.45 - 15.00 - kawa
 - 15.00 - 17.00 - praca
 
+
+## praca z wirtualnym srodowiskiem
+
+### tworzenie 
+
+    python -m venv .venv
+
+### aktywacja
+
+#### linux / mac
+
+    source .venv/bin/activate
+
+#### Windows
+
+    .venv\Scripts\activate
+
+### dezaktywacja
+
+    deactivate
+
 ## praca z jupyter notebook
+
 
 ### instalacja:
 
     pip install jupyter
+
+    alternatywnie
+
+     pip install jupyter-lab
 
 ### uruchomienie:
 
 W katalogu w ktorym chcemy 
 
     jupyter notebook
+
+    python -m jupyter lab
 
 
 ### Git
@@ -33,3 +61,5 @@ git add .
 git commit -m "informacja o commicie"
 
 git pull origin main
+
+
