@@ -1,0 +1,2 @@
+from modul_ktory_testuje import testowana_funkcja
+
