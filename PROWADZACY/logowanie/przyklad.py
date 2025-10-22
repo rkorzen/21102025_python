@@ -17,10 +17,8 @@ def loguj(funkcja):
         start = time.perf_counter()
         try:
             wynik = funkcja(*args, **kwargs)
-
             stop = time.perf_counter()
             elapsed = (stop - start) * 1000
-
             logger.info(f"{funkcja.__name__} wykonana w {elapsed:.4f} s")
         except Exception as e:
 
