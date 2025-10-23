@@ -1,65 +1,52 @@
+# Warsztaty Python
 
-## Organizacja zajeć:
+Material wspiera zajecia z Pythona w wariancie warsztatowym. W repozytorium znajdziesz zarowno pliki dla prowadzacego, jak i zestaw cwiczen dla uczestnikow.
 
-- 9.00 - 10.30 - praca
-- 10.30 - 10.45 - kawa
-- 10.45 - 12.15 - praca
-- 12.15 - 13.15 - obiad
-- 13.15 - 14.45 - praca
-- 14.45 - 15.00 - kawa
-- 15.00 - 17.00 - praca
+## Plan dnia
 
+- 09:00-10:30 praca warsztatowa  
+- 10:30-10:45 przerwa kawowa  
+- 10:45-12:15 praca warsztatowa  
+- 12:15-13:15 przerwa obiadowa  
+- 13:15-14:45 praca warsztatowa  
+- 14:45-15:00 przerwa kawowa  
+- 15:00-17:00 praca warsztatowa
 
-## praca z wirtualnym srodowiskiem
+## Struktura repozytorium
 
-### tworzenie 
+- `PROWADZACY/` - materialy dydaktyczne, przyklady, gotowe rozwiazania oraz testy (opis szczegolowy w `PROWADZACY/README.md`).  
+- `STUDENT/` - notatniki i cwiczenia dla uczestnikow.  
+- `README.md` (biezacy plik) - skrocona sciaga organizacyjna.
 
-    python -m venv .venv
+## Przygotowanie srodowiska
 
-### aktywacja
+### Wirtualne srodowisko
 
-#### linux / mac
+```bash
+python -m venv .venv          # utworzenie srodowiska
+source .venv/bin/activate     # aktywacja (Linux / macOS)
+.venv\Scripts\activate        # aktywacja (Windows PowerShell)
+deactivate                    # wyjscie
+```
 
-    source .venv/bin/activate
+### Jupyter Notebook / Lab
 
-#### Windows
+```bash
+pip install jupyter           # klasyczny interfejs
+pip install jupyterlab        # alternatywnie JupyterLab
 
-    .venv\Scripts\activate
+jupyter notebook              # uruchomienie w biezacym katalogu
+python -m jupyter lab         # wariant polecany dla Lab
+```
 
-### dezaktywacja
+## Podstawowe polecenia Git
 
-    deactivate
-
-## praca z jupyter notebook
-
-
-### instalacja:
-
-    pip install jupyter
-
-    alternatywnie
-
-     pip install jupyter-lab
-
-### uruchomienie:
-
-W katalogu w ktorym chcemy 
-
-    jupyter notebook
-
-    python -m jupyter lab
-
-
-### Git
-
+```bash
 git status
-
-git add <konkretna sciezka>
-
+git add <sciezka>
 git add .
-
-git commit -m "informacja o commicie"
-
+git commit -m "komentarz"
 git pull origin main
+```
 
-
+Przed zajeciami upewnij sie, ze srodowisko jest gotowe, a lokalne zmiany zostaly zarejestrowane lub odrzucone w zaleznosci od potrzeby. Powodzenia!

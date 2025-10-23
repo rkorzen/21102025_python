@@ -1,16 +1,20 @@
+"""Dekorator logujący czas wykonania funkcji z obsługą wyjątków."""
+
 import logging
-from functools import wraps
 import time
+from functools import wraps
 
 logging.basicConfig(
     level=logging.DEBUG,
     filename="example.log",
-    format='%(asctime)s %(levelname)s %(name)s | %(funcName)s | %(message)s'
+    format="%(asctime)s %(levelname)s %(name)s | %(funcName)s | %(message)s",
 )
 
 logger = logging.getLogger(__name__)
 
+
 def loguj(funkcja):
+    """Dodaj logowanie czasu wykonania funkcji oraz obsługę wyjątków."""
 
     @wraps(funkcja)
     def opakowanie(*args, **kwargs):
@@ -32,18 +36,27 @@ def loguj(funkcja):
 
     return opakowanie
 
+
 @loguj
 def policz_sume(n: int):
+    """Policz sumę zakresu liczb od 0 do n-1."""
     return sum(range(n))
+
 
 @loguj
 def policz_sume_z_bledem(n: int):
-    suma=0
+    """Wariant funkcji generujący błąd w połowie obliczeń."""
+    suma = 0
     for i in range(n):
         if i == n // 2:
             raise ValueError(f"Nie mozna policzyc sume w punkcie {i}")
         suma += i
     return suma
 
-print(policz_sume(10))
-print(policz_sume_z_bledem(10))
+
+if __name__ == "__main__":
+    print(policz_sume(10))
+    try:
+        print(policz_sume_z_bledem(10))
+    except ValueError:
+        print("Obsłużono ValueError – szczegóły w pliku example.log.")

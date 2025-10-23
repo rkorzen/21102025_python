@@ -1,31 +1,28 @@
+"""Moduł z prostą funkcją progową – materiał do ćwiczeń z testów."""
 
-def funkcja(x):
-    """Funkcja progowa, zwraca 1 dla x większy od 0 i 0 w pozostalych przypadach
 
-    np:
-    >>> testowana_funkcja(1)
+def funkcja(x: int) -> int:
+    """Zwróć 1 dla wartości dodatnich, w przeciwnym razie 0.
+
+    Przykłady:
+
+    >>> funkcja(1)
     1
-    >>> testowana_funkcja(0)
+    >>> funkcja(0)
     0
-    >>> testowana_funkcja(-1)
+    >>> funkcja(-1)
     0
-
     """
     if x > 0:
         return 1
-    else:
-        return 0
+    return 0
 
-# assert False
-# print(__name__)
+
 if __name__ == "__main__":
-    print("Wykonujemy testy")
-    assert testowana_funkcja(1) == 2
+    print("Wykonujemy szybkie testy ręczne...")
+    assert funkcja(1) == 1
     print(".", end="")
-    assert testowana_funkcja(0) == 0
+    assert funkcja(0) == 0
     print(".", end="")
-    assert testowana_funkcja(-1) == 0, "zla wartosc"
-    print(".",)
-    print("OK")
-
-
+    assert funkcja(-1) == 0
+    print(". OK")

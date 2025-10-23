@@ -1,43 +1,57 @@
-def add(a, b):
+"""Prosty kalkulator konsolowy wykorzystywany podczas zajęć."""
+
+from typing import Callable, Dict, Tuple
+
+
+def add(a: int, b: int) -> int:
+    """Zwróć sumę argumentów."""
     return a + b
 
-def sub(a, b): return a - b
 
-def mul(a, b): return a * b
+def sub(a: int, b: int) -> int:
+    """Zwróć różnicę argumentów."""
+    return a - b
 
-def div(a, b): return a / b
 
-operations = {
+def mul(a: int, b: int) -> int:
+    """Zwróć iloczyn argumentów."""
+    return a * b
+
+
+def div(a: int, b: int) -> float:
+    """Zwróć iloraz argumentów."""
+    return a / b
+
+
+OPERATIONS: Dict[str, Callable[[int, int], float]] = {
     "+": add,
     "-": sub,
     "*": mul,
-    "/": div
+    "/": div,
 }
 
-def get_data():
+
+def get_data() -> Tuple[str, int, int]:
+    """Pobierz dane od użytkownika, walidując znak operacji."""
     operation = input("Podaj rodzaj operacji (+-/*): ")
 
-    if operation not in operations:
-        raise ValueError("Podano niepoprawny operator!!")
+    if operation not in OPERATIONS:
+        raise ValueError("Podano niepoprawny operator!")
 
     a = int(input("Podaj pierwszy argument: "))
     b = int(input("Podaj drugi argument: "))
-    # print(dir())
-    # print(locals())
-    # print(globals())
     return operation, a, b
 
 
-def main():
+def main() -> None:
+    """Zbierz dane, wykonaj działanie i pokaż wynik."""
     operation, a, b = get_data()
-
-    result = operations[operation](a, b)
+    result = OPERATIONS[operation](a, b)
     print(f"Wynik operacji {a}{operation}{b} = {result}")
 
 
-print(dir())
-
 if __name__ == "__main__":
     main()
-    ...
 
+# Alias zachowujący kompatybilność ze starszymi materiałami i testami.
+operations = OPERATIONS

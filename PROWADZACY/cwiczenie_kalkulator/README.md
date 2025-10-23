@@ -1,13 +1,12 @@
-zaimplementuj prostu kalkulator oferujacy dzialania +-/*
+## Zadanie: kalkulator funkcji
 
-pamietaja, ze to jest zadanie o funkcjach
+Zaimplementuj prosty kalkulator tekstowy wspierający operacje `+`, `-`, `*`, `/`.
 
-- mamy dzialania arytmetyczne
-- mamy pobieranie danych od uzytkownika
-- mamy wypisywanie danych na ekran
-- mamy spiecie w calosc tego programu
-- potrzebne sa tez testy
+**Na co zwrócić uwagę:**
 
-- pamietaj, ze funkcje arytmetyczne moga byc uzyte w innych modulach.
-- im krotsza funkcja tym lepiej
-- im mniej zagniezdzen i ifow tym lepiej..
+- oddziel odpowiedzialności (pobieranie danych, logika obliczeń, prezentacja wyniku),
+- funkcje arytmetyczne powinny być możliwe do ponownego wykorzystania w innych modułach,
+- im krótsze i prostsze funkcje, tym lepiej – unikaj zagnieżdżonych `ifów`,
+- koniecznie przygotuj testy jednostkowe (szczególnie dla przypadków brzegowych, np. dzielnie przez zero).
+
+W folderze znajdziesz gotowy szkielet (`kalkulator.py`) oraz przykładowe testy (`test_kalkulator.py`). Zachęcaj uczestników do uruchamiania `pytest -q` po każdej zmianie.

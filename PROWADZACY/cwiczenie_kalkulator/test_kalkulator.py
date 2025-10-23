@@ -1,5 +1,8 @@
+"""Testy jednostkowe dla modułu kalkulatora."""
+
 import pytest
-from kalkulator import add, sub, mul, div, get_data
+
+from kalkulator import OPERATIONS, add, div, get_data, mul, sub
 
 def test_add():
     assert add(1, 2) == 3
@@ -35,9 +38,7 @@ def test_div():
 
 
 def test_get_data_valid(monkeypatch):
-
     inputs = iter(["+", "1", "2"])
-
     monkeypatch.setattr("builtins.input", lambda _: next(inputs))
 
     op, a, b = get_data()
@@ -48,12 +49,16 @@ def test_get_data_valid(monkeypatch):
 
 
 def test_get_data_invalid(monkeypatch):
-
-    operators = {"^": "add"}
+    operators = {"^": add}
     inputs = iter(["+"])
 
     monkeypatch.setattr("builtins.input", lambda _: next(inputs))
+    monkeypatch.setattr("kalkulator.OPERATIONS", operators)
     monkeypatch.setattr("kalkulator.operations", operators)
 
     with pytest.raises(ValueError, match="Podano niepoprawny operator"):
         get_data()
+
+
+def test_operations_mapping():
+    assert set(OPERATIONS.keys()) == {"+", "-", "*", "/"}
