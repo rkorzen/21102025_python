@@ -50,3 +50,6 @@ git pull origin main
 ```
 
 Przed zajeciami upewnij sie, ze srodowisko jest gotowe, a lokalne zmiany zostaly zarejestrowane lub odrzucone w zaleznosci od potrzeby. Powodzenia!
+
+
+15:11 przerwa

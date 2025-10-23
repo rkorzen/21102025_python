@@ -1,0 +1,1 @@
+from subpaczka import foo
