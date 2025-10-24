@@ -23,11 +23,15 @@ def div(a: int, b: int) -> float:
     return a / b
 
 
+def pow(a: int, n: int) -> int:
+    return a ** n
+
 OPERATIONS: Dict[str, Callable[[int, int], float]] = {
     "+": add,
     "-": sub,
     "*": mul,
     "/": div,
+    "**": pow
 }
 
 

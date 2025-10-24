@@ -1,0 +1,4 @@
+
+Invoice:
+Items: ['A', 'V']
+Total: 80.0
