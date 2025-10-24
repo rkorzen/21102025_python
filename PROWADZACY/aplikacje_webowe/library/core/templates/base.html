@@ -1,0 +1,18 @@
+{% extends "common.html" %}
+
+{% block content %}
+Rownanie: {{ a }} + {{ b }} = {{ suma }}
+{% if pokaz %}
+<p>jakis tekst do pokazania tylko gdy zmienna debub ustawiona true</p>
+{% endif %}
+
+<ul>
+    {% for i in dane %}
+    <li>{{ i|upper }}</li>
+    {% endfor %}
+</ul>
+
+{{ klasa.a }}
+
+{{ klasa.cos_tam }}
+{% endblock %}

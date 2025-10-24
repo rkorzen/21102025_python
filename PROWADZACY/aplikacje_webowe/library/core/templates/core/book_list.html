@@ -1,0 +1,10 @@
+{% extends 'common.html' %}
+
+{% block content %}
+{{ block.super }}
+<h1>Book list</h1>
+
+{% for book in books %}
+<p>{{ book.title }}</p>
+{% endfor %}
+{% endblock %}
